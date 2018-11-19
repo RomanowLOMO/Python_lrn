@@ -5,13 +5,13 @@ using namespace std;
 int main()
 {
 	const unsigned char WHITE = 219;
-	const unsigned char GRAY = 176; // серый цвет для остальных чисел
+	const unsigned char GRAY = 176;
 	unsigned char ch;
-	// действия для каждой позиции на экране
-	for (int count = 0; count<80 * 25 - 1; count++)
+
+	for (int count = 0; count < 80 * 25 - 1; count++)
 	{
 		ch = WHITE; //предполагаем, что число простое
-		for (int j = 2; j<count; j++) // делим на каждое целое, большее 2
+		for (int j = 2; j < count; j++) // делим на каждое целое, большее 2
 			if (count % j == 0) // если остаток равен 0,
 			{
 				ch = GRAY; // то число не простое
@@ -19,6 +19,6 @@ int main()
 			}
 		cout << ch; // вывод символа на экран
 	}
-	getch(); // задержка полученного изображения
+	_getch(); // задержка полученного изображения
 	return 0;
 }
