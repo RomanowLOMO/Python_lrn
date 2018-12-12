@@ -1,9 +1,4 @@
-import itertools
-
-
-def rle(iterable):
-    for item, g in itertools.groupby(iterable):
-        yield item, sum(1 for _ in g)
+from test_lrn.my_func_for_tests import my_function
 
 
 # def test_rle():
@@ -20,7 +15,7 @@ def rle(iterable):
 
 def test_rle():
     # ПЕРЕПИШЕМ ТЕСТЫ СВЕРХУ И ДОБАВИМ СООБЩЕНИЯ ОБ ОШИБКЕ
-    actual = rle("mississippi")
+    actual = my_function.rle("mississippi")
     expected = [
         ('m', 1), ('i', 1), ('s', 2), ('i', 1),
         ('s', 2), ('i', 1), ('p', 2), ('i', 1)
@@ -30,7 +25,7 @@ def test_rle():
 
 
 def test_rle_empty():
-    actual = list(rle(""))
+    actual = list(my_function.rle(""))
     expected = []
     message = "{} != {}".format(actual, expected)
     assert actual == expected, message
