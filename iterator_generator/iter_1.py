@@ -1,18 +1,18 @@
-# # итератор, пример
-# num_list = ['a', 'b', 3, 4]
-# itr = iter(num_list)
+# итератор, пример
+num_list = ['a', 'b', 3, 4]
+itr = iter(num_list)
 # print(next(itr))
-#
-# itr1 = num_list.__iter__()
+
+itr1 = num_list.__iter__()
 # print(next(itr1))
 
-# # пример работы цикла for с итератором
-# book = {
-#     'title': 'The Langoliers',
-#     'author': 'Stephen King',
-#     'year': 1990
-# }
-#
+# пример работы цикла for с итератором
+book = {
+    'title': 'The Langoliers',
+    'author': 'Stephen King',
+    'year': 1990
+}
+
 # for i in book:
 #     print(i)
 #
@@ -23,6 +23,8 @@
 #         print(i)
 #     except StopIteration:
 #         break
+
+
 # # напишем свой объект-итератор
 from random import random
 #
@@ -112,12 +114,12 @@ from random import random
 # y = next(gen)
 # print(y)
 
-def random_gen(k):
-    for z in range(k):
-        yield z
-
-
-gen = random_gen(3)
-for i in gen:
-    print(i)
+# def random_gen(k):
+#     for z in range(k):
+#         yield z
+#
+#
+# gen = random_gen(3)
+# for i in gen:
+#     print(i)
 

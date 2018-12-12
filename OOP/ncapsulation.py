@@ -1,4 +1,5 @@
 class Car():
+    # наследуемся
     def exclaim(self):
         print("I'm a Car!")
 
@@ -17,8 +18,9 @@ give_me_a_yugo = Yugo()
 give_me_a_car.exclaim()
 give_me_a_yugo.exclaim()
 
-# просим помощи у предка
+
 class Person():
+    # просим помощи у предка
     def __init__(self, name):
         self.name = name
 
@@ -33,10 +35,9 @@ bob = EmailPerson('Bob Marly', 'bob@google.com')
 print(bob.name)
 print(bob.email)
 
-# атрибуты класса с помощью свойств
-
 
 class Duck():
+    # атрибуты класса с помощью свойств
     def __init__(self, input_name):
         self.hidden_name = input_name
 
