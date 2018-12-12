@@ -1,0 +1,37 @@
+def rle(iterable):
+    for item, g in itertools.groupby(iterable):
+        yield item, sum(1 for _ in g)
+
+
+# def test_rle():
+#     #ÒÅÑÒÈĞÓÅÌ Ñ ÏÎÌÎÙÜŞ ASSERT
+#     #ÓÏÀÄÅÒ ÏÎÒÎÌÓ ×ÒÎ rle("...") íå áóäåò ñïèñêîì. Ñëåâà ãåíåğàòîğ, ñïğàâà ñïèñîê
+#     assert rle("mississippi") == [
+#         ('m', 1), ('i', 1), ('s', 2), ('i', 1),
+#         ('s', 2), ('i', 1), ('p', 2), ('i', 1)
+#     ]
+#
+#
+# def test_rle_empty():
+#     assert not list(rle(""))
+
+def test_rle():
+    # ÏÅĞÅÏÈØÅÌ ÒÅÑÒÛ ÑÂÅĞÕÓ È ÄÎÁÀÂÈÌ ÑÎÎÁÙÅÍÈß ÎÁ ÎØÈÁÊÅ
+    actual = rle("mississippi")
+    expected = [
+        ('m', 1), ('i', 1), ('s', 2), ('i', 1),
+        ('s', 2), ('i', 1), ('p', 2), ('i', 1)
+    ]
+    message = "{} != {}".format(actual, expected)
+    assert actual == expected, message
+
+
+def test_rle_empty():
+    actual = list(rle(""))
+    expected = []
+    message = "{} != {}".format(actual, expected)
+    assert actual == expected, message
+
+
+test_rle()
+test_rle_empty()
